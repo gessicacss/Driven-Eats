@@ -1,0 +1,67 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e5e5e5;
+}
+
+header {
+    background:red;
+    width:414px;
+    height:92px;
+    display:flex;
+    align-items: center;
+    box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+header div {
+    padding:15px;
+    color:white;
+}
+
+h1, h3 {
+    font-family: 'Righteous', cursive;
+}
+
+h1 {
+    font-size:44px;
+    weight:400;
+    line-height:44px;
+}
+
+h2 {
+    font-size:18px;
+    font-weight:400;
+    line-height: 21px;
+}
+
+main {
+    width:414px;
+    padding:15px;
+    box-sizing:border-box;
+    overflow-x: scroll;
+}
+
+h3 {
+    margin: 10px auto;
+    font-size:26px;
+    font-weight:400;
+    color:#333;
+}
+
+.prato {
+    display:flex;
+}
+
+.opcoes {
+    padding:15px;
+    width:172px;
+    background:#fff;
+    border-radius:9px;
+
+    margin-right:10px;
+}
+
+.opcoes img {
+    width:144px;
+    height:87px;
+    border-radius:4px;
+}
