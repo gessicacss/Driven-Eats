@@ -78,20 +78,22 @@ h3 {
     border-radius:4px;
 }
 
-h4 {
+.opcoes h4 {
     font-size:16px;
     font-weight:700;
     color:#333;
     line-height: 19px;
     margin:5px 0;
+    width:144px;
 }
 
-p {
+.opcoes p {
     font-size:15px;
     font-weight:300;
     color:#a6a6a6;
     line-height:19px;
     margin-bottom:5px;
+    width:144px;
 }
 
 span {
