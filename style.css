@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #e5e5e5;
@@ -61,15 +65,20 @@ h3 {
 
 .container::-webkit-scrollbar {
     display:none;
+    scrollbar-width:none;
 }
 
 .opcoes {
-    padding:15px;
+    padding:10px;
     width:172px;
+    height:216px;
     background:#fff;
     border-radius:9px;
 
     margin-right:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .opcoes img {
@@ -83,8 +92,8 @@ h3 {
     font-weight:700;
     color:#333;
     line-height: 19px;
-    margin:5px 0;
     width:144px;
+    white-space: nowrap;
 }
 
 .opcoes p {
@@ -94,12 +103,25 @@ h3 {
     line-height:19px;
     margin-bottom:5px;
     width:144px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /** número de linhas exibidas */
+    -webkit-box-orient: vertical;
+}
+
+.opcoes p, h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 span {
     font-size:16px;
     font-weight:400;
     line-height:19px;
+}
+
+.opcoes div {
+    display:flex;
+    justify-content: space-between;
 }
 
 footer {
@@ -123,12 +145,10 @@ footer {
     display:flex;
     justify-content: center;
     align-items: center;
-    
-    box-sizing: border-box;
 }
 
 .fechar-pedido button {
-    background-color:#cbcbcb;
+    background-color:#32b72f;
     width:364px;
     height:61px;
     border-radius:50px;
@@ -138,10 +158,32 @@ footer {
     
 }
 
+.fechar-pedido button:disabled {
+    background-color:#cbcbcb;
+}
+
+
 .fechar-pedido button p {
     font-size:20px;
     font-weight:400;
     text-align: center;
 
     color:white;
+}
+
+ion-icon {
+    color:#32b72f;
+    font-size:15px;
+}
+
+.selecionado {
+    border: 5px solid #32b72f;
+}
+
+.selecionado ion-icon {
+    display: initial;
+}
+
+.display {
+    display:none;
 }
