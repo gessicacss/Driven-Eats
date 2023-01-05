@@ -6,7 +6,6 @@ function selecionarPrato(prato) {
     }
 
     prato.classList.add("selecionado");
-    console.log(prato)
     }
 
 function selecionarBebida(bebida) {
@@ -17,7 +16,6 @@ function selecionarBebida(bebida) {
     }
     
     bebida.classList.add("selecionado");
-    console.log(bebida)
     }
 
 function selecionarSobremesa(sobremesa) {
