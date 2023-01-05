@@ -1,11 +1,12 @@
 function selecionarPrato(prato) {
-    const pratoSelecionado = document.querySelector(".prato .selecionado");
+    const pratoSelecionado = document.querySelector(`.prato .selecionado`);
 
     if (pratoSelecionado !== null) {
         pratoSelecionado.classList.remove("selecionado");
     }
 
     prato.classList.add("selecionado");
+    habilitarBotao();
     }
 
 function selecionarBebida(bebida) {
@@ -16,6 +17,7 @@ function selecionarBebida(bebida) {
     }
     
     bebida.classList.add("selecionado");
+    habilitarBotao();
     }
 
 function selecionarSobremesa(sobremesa) {
@@ -26,4 +28,14 @@ function selecionarSobremesa(sobremesa) {
 }
 
 sobremesa.classList.add("selecionado");
+habilitarBotao();
+}
+
+function habilitarBotao () {
+    const verifica = document.querySelectorAll(".selecionado").length;
+if (verifica === 3) {
+    const botao = document.querySelector('.enviar');
+    botao.removeAttribute('disabled');
+    botao.innerHTML = `Fechar pedido`
+}
 }
