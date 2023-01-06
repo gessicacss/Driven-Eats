@@ -48,6 +48,5 @@ function nome (nomeSelecionado) {
 function valor (preco) {
     let valor = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
     valor = (Number(valor));
-    
     return valor;
 }

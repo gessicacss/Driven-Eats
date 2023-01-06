@@ -65,7 +65,6 @@ h3 {
 
 .container::-webkit-scrollbar {
     display:none;
-    scrollbar-width:none;
 }
 
 .opcoes {
@@ -74,7 +73,7 @@ h3 {
     height:216px;
     background:#fff;
     border-radius:9px;
-    border: 5px solid white;
+    border: thick solid white;
 
     margin-right:10px;
     display:flex;
@@ -189,6 +188,88 @@ ion-icon {
     display: initial;
 }
 
-    .display {
-        display:none;
-    }
+.background {
+    background-color:rgba(255, 255, 255, 0.9);
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.pagina-confirmacao {
+    width:377px;
+    height:353px;
+    background-color:#32b72f;
+    border-radius:9px;
+    padding:20px 22px 0px 22px;
+
+    color:#fff;
+    box-shadow:0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.pagina-confirmacao h5 {
+    text-align: center;
+    font-size:22px;
+    font-weight:700;
+    line-height: 26px;
+}
+
+ul {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:16px;
+}
+
+ul .item {
+    display:flex;
+    justify-content: space-between;
+    margin:10px;
+}
+
+ul .item p {
+    font-size: 22px;
+    line-height:26px;
+    letter-spacing: 0.018em;
+}
+
+ul .item:last-child {
+    text-transform: uppercase;
+    font-weight:700;
+}
+
+.botoes {
+    display:flex;
+    flex-direction: column;
+}
+
+.botoes button {
+    width:333px;
+    height:52px;
+}
+
+.confirmar {
+    background-color:#fff;
+    border-radius:100px;
+    color:#32b72f;
+    font-size:22px;
+    font-weight:700;
+}
+
+.cancelar {
+    background-color: transparent;
+    font-size:20px;
+    font-weight:700;
+    color:#fff;
+}
+
+.display {
+    display:none;
+}
