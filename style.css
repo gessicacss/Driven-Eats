@@ -158,11 +158,18 @@ button {
     width:364px;
     height:61px;
     border-radius:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     
     font-size:20px;
     font-weight:400;
     text-align: center;
     color:white;
+}
+
+.enviar p {
+    width:200px;
 }
 
 .enviar:disabled {
