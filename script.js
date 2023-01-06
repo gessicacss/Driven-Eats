@@ -52,9 +52,6 @@ function valor (preco) {
 }
 
 function pedido () {
-    const modal = document.querySelector('.background');
-    modal.classList.remove('display');
-
     const pratoSelecionado = document.querySelector('.prato .selecionado');
     const bebidaSelecionada = document.querySelector('.bebida .selecionado');
     const sobremesaSelecionada = document.querySelector ('.sobremesa .selecionado');

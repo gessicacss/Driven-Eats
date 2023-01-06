@@ -70,10 +70,11 @@ h3 {
 .opcoes {
     padding:10px;
     width:172px;
+    max-width:172px;
+    min-width:172px;
     height:216px;
     background:#fff;
     border-radius:9px;
-    border: thick solid white;
 
     margin-right:10px;
     display:flex;
