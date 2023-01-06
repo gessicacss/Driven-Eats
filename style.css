@@ -68,10 +68,8 @@ h3 {
 }
 
 .opcoes {
-    padding:10px;
+    padding:15px;
     width:172px;
-    max-width:172px;
-    min-width:172px;
     height:216px;
     background:#fff;
     border-radius:9px;
@@ -183,6 +181,7 @@ ion-icon {
 
 .selecionado {
     border: thick  solid #32b72f;
+    padding:10px;
 }
 
 .selecionado ion-icon {
