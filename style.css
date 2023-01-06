@@ -225,13 +225,13 @@ ul {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    margin-top:16px;
+    margin-top:5px;
 }
 
 ul .item {
     display:flex;
     justify-content: space-between;
-    margin:10px;
+    margin:8px;
 }
 
 ul .item p {
