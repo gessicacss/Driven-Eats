@@ -50,3 +50,30 @@ function valor (preco) {
     valor = (Number(valor));
     return valor;
 }
+
+function fecharPedido () {
+    const modal = document.querySelector('.background');
+    modal.classList.remove('display');
+
+    const pratoSelecionado = document.querySelector('.prato .selecionado');
+    const bebidaSelecionada = document.querySelector('.bebida .selecionado');
+    const sobremesaSelecionada = document.querySelector ('.sobremesa .selecionado');
+
+    const nomePrato = nome(pratoSelecionado);
+    const nomeBebida = nome(bebidaSelecionada);
+    const nomeSobremesa = nome(sobremesaSelecionada);
+
+    const precoPrato = valor(pratoSelecionado);
+    const precoBebida = valor(bebidaSelecionada);
+    const precoSobremesa = valor(sobremesaSelecionada);
+
+    const valorTotal = (precoPrato + precoBebida + precoSobremesa).toFixed(2);
+
+    document.querySelector('.nome-prato').textContent = nomePrato;
+    document.querySelector('.preco-prato').textContent = precoPrato.toFixed(2);
+    document.querySelector('.nome-bebida').textContent = nomeBebida;
+    document.querySelector('.preco-bebida').textContent = precoBebida.toFixed(2);
+    document.querySelector('.nome-sobremesa').textContent = nomeSobremesa;
+    document.querySelector('.preco-sobremesa').textContent = precoSobremesa.toFixed(2);
+    document.querySelector('.preco-total').textContent = valorTotal;
+}
