@@ -36,6 +36,18 @@ function habilitarBotao () {
 if (verifica === 3) {
     const botao = document.querySelector('.enviar');
     botao.removeAttribute('disabled');
-    botao.innerHTML = `Fechar pedido`
+    botao.textContent = `Fechar pedido`
 }
+}
+
+function nome (nomeSelecionado) {
+    const nome = nomeSelecionado.querySelector('.nome').textContent;
+    return nome;
+}
+
+function valor (preco) {
+    let valor = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
+    valor = (Number(valor));
+    
+    return valor;
 }
