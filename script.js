@@ -6,17 +6,6 @@ let nomeSobremesa;
 let precoSobremesa;
 let valorTotal;
 
-function nome (nomeSelecionado) {
-    const nome = nomeSelecionado.querySelector('.nome').textContent;
-    return nome;
-}
-
-function valor (preco) {
-    let valor = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
-    valor = (Number(valor)*100/100);
-    return valor;
-}
-
 function selecionarPrato(prato) {
     const pratoSelecionado = document.querySelector(`.prato .selecionado`);
 
@@ -70,6 +59,17 @@ function habilitarBotao () {
 }
 }
 
+function nome (nomeSelecionado) {
+    const nomePedido = nomeSelecionado.querySelector('.nome').textContent;
+    return nomePedido;
+}
+
+function valor (preco) {
+    let valorPedido = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
+    valorPedido = (Number(valorPedido)*100/100);
+    return valorPedido;
+}
+
 function fecharPedido () {
     const modal = document.querySelector('.background');
     modal.classList.remove('display');
@@ -98,7 +98,7 @@ const mensagem = `Olá, gostaria de fazer o pedido:
 - Prato: ${nomePrato} 
 - Bebida: ${nomeBebida} 
 - Sobremesa: ${nomeSobremesa} 
-Total: R$${valorTotal} 
+Total: R$${valorTotal.toFixed(2)} 
 
 Nome: ${nomePessoa} 
 Endereço: ${endereco}`;
