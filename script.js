@@ -6,7 +6,7 @@ let nomeSobremesa;
 let precoSobremesa;
 let valorTotal;
 
-let numToFixed = 2;
+const numToFixed = 2;
 
 function selecionarPrato(prato) {
 const pratoSelecionado = document.querySelector(`.prato .selecionado`);
@@ -65,6 +65,7 @@ function fecharPedido () {
     const modal = document.querySelector('.background');
     modal.classList.remove('display');
 
+
     valorTotal = Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa);
 
     document.querySelector('.nome-prato').textContent = nomePrato;
@@ -85,7 +86,10 @@ function enviarPedido () {
     const nomePessoa = prompt(`Qual seu nome?`);
     const endereco = prompt (`Qual seu endereço?`);
 
-    const mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomePrato} \n- Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} \nTotal: R$ ${valorTotal.toFixed(numToFixed)} \n\nNome: ${nomePessoa} \nEndereço: ${endereco}`;
+    const mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomePrato} 
+    - Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} 
+    Total: R$ ${valorTotal.toFixed(numToFixed)} \n\nNome: ${nomePessoa} 
+    Endereço: ${endereco}`;
 
     const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
 
