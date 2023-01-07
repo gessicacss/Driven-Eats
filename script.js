@@ -1,8 +1,8 @@
-let nomePrato; 
-let precoPrato; 
-let nomeBebida; 
+let nomePrato;
+let precoPrato;
+let nomeBebida;
 let precoBebida;
-let nomeSobremesa; 
+let nomeSobremesa;
 let precoSobremesa;
 let valorTotal;
 
@@ -52,12 +52,10 @@ const sobremesaSelecionada = document.querySelector(".sobremesa .selecionado");
 }
 
 function habilitarBotao () {
-    const verifica = document.querySelectorAll(".selecionado").length;
-
-    if (verifica === 3) {
+    if (nomePrato !== undefined && nomeBebida !== undefined && nomeSobremesa !== undefined) {
     const botao = document.querySelector('.enviar');
     botao.removeAttribute('disabled');
-    botao.textContent = `Fechar pedido`
+    botao.textContent = `Fechar pedido`;
 }
 }
 
@@ -93,10 +91,10 @@ function cancelar () {
 }
 
 function enviarPedido () {
-    const nome = prompt(`Qual seu nome?`);
+    const nomePessoa = prompt(`Qual seu nome?`);
     const endereco = prompt (`Qual seu endereço?`);
 
-    const mensagem = `Olá, gostaria de fazer o pedido: \n- Prato: ${nomePrato} \n- Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} \nTotal: R$${valorTotal} \n\nNome: ${nome} \nEndereço: ${endereco}`
+    const mensagem = `Olá, gostaria de fazer o pedido: \n- Prato: ${nomePrato} \n- Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} \nTotal: R$${valorTotal} \n\nNome: ${nomePessoa} \nEndereço: ${endereco}`;
 
     const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
 
