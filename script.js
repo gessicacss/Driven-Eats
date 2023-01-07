@@ -6,6 +6,17 @@ let nomeSobremesa;
 let precoSobremesa;
 let valorTotal;
 
+function nome (nomeSelecionado) {
+    const nome = nomeSelecionado.querySelector('.nome').textContent;
+    return nome;
+}
+
+function valor (preco) {
+    let valor = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
+    valor = (Number(valor));
+    return valor;
+}
+
 function selecionarPrato(prato) {
     const pratoSelecionado = document.querySelector(`.prato .selecionado`);
 
@@ -23,11 +34,11 @@ function selecionarPrato(prato) {
 
 function selecionarBebida(bebida) {
     const bebidaSelecionada = document.querySelector(".bebida .selecionado");
-    
+
     if (bebidaSelecionada !== null) {
         bebidaSelecionada.classList.remove("selecionado");
     }
-    
+
     bebida.classList.add("selecionado");
 
     nomeBebida = nome(bebida);
@@ -59,17 +70,6 @@ function habilitarBotao () {
 }
 }
 
-function nome (nomeSelecionado) {
-    const nome = nomeSelecionado.querySelector('.nome').textContent;
-    return nome;
-}
-
-function valor (preco) {
-    let valor = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
-    valor = (Number(valor));
-    return valor;
-}
-
 function fecharPedido () {
     const modal = document.querySelector('.background');
     modal.classList.remove('display');
@@ -94,7 +94,13 @@ function enviarPedido () {
     const nomePessoa = prompt(`Qual seu nome?`);
     const endereco = prompt (`Qual seu endereço?`);
 
-    const mensagem = `Olá, gostaria de fazer o pedido: \n- Prato: ${nomePrato} \n- Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} \nTotal: R$${valorTotal} \n\nNome: ${nomePessoa} \nEndereço: ${endereco}`;
+const mensagem = `Olá, gostaria de fazer o pedido: 
+\n- Prato: ${nomePrato} 
+\n- Bebida: ${nomeBebida} 
+\n- Sobremesa: ${nomeSobremesa} 
+\nTotal: R$${valorTotal} 
+\n\nNome: ${nomePessoa} 
+\nEndereço: ${endereco}`;
 
     const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
 
