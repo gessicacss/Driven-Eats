@@ -76,7 +76,7 @@ function fecharPedido () {
     const modal = document.querySelector('.background');
     modal.classList.remove('display');
 
-    const valorTotal = (precoPrato + precoBebida + precoSobremesa).toFixed(2);
+    valorTotal = (precoPrato + precoBebida + precoSobremesa).toFixed(2);
 
     document.querySelector('.nome-prato').textContent = nomePrato;
     document.querySelector('.preco-prato').textContent = precoPrato.toFixed(2);
@@ -90,4 +90,15 @@ function fecharPedido () {
 function cancelar () {
     const fecharModal = document.querySelector('.background');
     fecharModal.classList.add('display');
+}
+
+function enviarPedido () {
+    const nome = prompt(`Qual seu nome?`);
+    const endereco = prompt (`Qual seu endereço?`);
+
+    const mensagem = `Olá, gostaria de fazer o pedido: \n- Prato: ${nomePrato} \n- Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} \nTotal: R$${valorTotal} \n\nNome: ${nome} \nEndereço: ${endereco}`
+
+    const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(enviarWpp);
 }
