@@ -85,7 +85,7 @@ function enviarPedido () {
     const nomePessoa = prompt(`Qual seu nome?`);
     const endereco = prompt (`Qual seu endereço?`);
 
-    const mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomePrato} \n- Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} \nTotal: R$${valorTotal.toFixed(numToFixed)} \n\nNome: ${nomePessoa} \nEndereço: ${endereco}`;
+    const mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomePrato} \n- Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} \nTotal: R$ ${valorTotal.toFixed(numToFixed)} \n\nNome: ${nomePessoa} \nEndereço: ${endereco}`;
 
     const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
 
