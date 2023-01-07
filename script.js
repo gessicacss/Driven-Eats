@@ -13,7 +13,7 @@ function nome (nomeSelecionado) {
 
 function valor (preco) {
     let valor = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
-    valor = (Number(valor));
+    valor = (Number(valor)*100/100);
     return valor;
 }
 
@@ -74,7 +74,7 @@ function fecharPedido () {
     const modal = document.querySelector('.background');
     modal.classList.remove('display');
 
-    valorTotal = (precoPrato + precoBebida + precoSobremesa).toFixed(2);
+    valorTotal = (precoPrato + precoBebida + precoSobremesa);
 
     document.querySelector('.nome-prato').textContent = nomePrato;
     document.querySelector('.preco-prato').textContent = precoPrato.toFixed(2);
@@ -82,7 +82,7 @@ function fecharPedido () {
     document.querySelector('.preco-bebida').textContent = precoBebida.toFixed(2);
     document.querySelector('.nome-sobremesa').textContent = nomeSobremesa;
     document.querySelector('.preco-sobremesa').textContent = precoSobremesa.toFixed(2);
-    document.querySelector('.preco-total').textContent = valorTotal;
+    document.querySelector('.preco-total').textContent = valorTotal.toFixed(2);
 }
 
 function cancelar () {
