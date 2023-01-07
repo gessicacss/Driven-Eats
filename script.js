@@ -86,3 +86,8 @@ function fecharPedido () {
     document.querySelector('.preco-sobremesa').textContent = precoSobremesa.toFixed(2);
     document.querySelector('.preco-total').textContent = valorTotal;
 }
+
+function cancelar () {
+    const fecharModal = document.querySelector('.background');
+    fecharModal.classList.add('display');
+}
