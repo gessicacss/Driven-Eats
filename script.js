@@ -95,12 +95,13 @@ function enviarPedido () {
     const endereco = prompt (`Qual seu endereço?`);
 
 const mensagem = `Olá, gostaria de fazer o pedido: 
-\n- Prato: ${nomePrato} 
-\n- Bebida: ${nomeBebida} 
-\n- Sobremesa: ${nomeSobremesa} 
-\nTotal: R$${valorTotal} 
-\n\nNome: ${nomePessoa} 
-\nEndereço: ${endereco}`;
+- Prato: ${nomePrato} 
+- Bebida: ${nomeBebida} 
+- Sobremesa: ${nomeSobremesa} 
+Total: R$${valorTotal} 
+
+Nome: ${nomePessoa} 
+Endereço: ${endereco}`;
 
     const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
 
