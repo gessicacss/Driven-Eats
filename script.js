@@ -6,6 +6,8 @@ let nomeSobremesa;
 let precoSobremesa;
 let valorTotal;
 
+let numToFixed = 2;
+
 function selecionarPrato(prato) {
 const pratoSelecionado = document.querySelector(`.prato .selecionado`);
 
@@ -15,8 +17,8 @@ if (pratoSelecionado !== null) {
 
 prato.classList.add("selecionado");
 
-    nomePrato = nome(prato);
-    precoPrato = valor(prato);
+    nomePrato = prato.querySelector('.nome').textContent;
+    precoPrato = prato.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
 
     habilitarBotao();
     }
@@ -30,8 +32,8 @@ function selecionarBebida(bebida) {
 
     bebida.classList.add("selecionado");
 
-    nomeBebida = nome(bebida);
-    precoBebida = valor(bebida);
+    nomeBebida = bebida.querySelector('.nome').textContent;
+    precoBebida = bebida.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
 
     habilitarBotao();
     }
@@ -45,8 +47,8 @@ const sobremesaSelecionada = document.querySelector(".sobremesa .selecionado");
 
     sobremesa.classList.add("selecionado");
 
-    nomeSobremesa = nome(sobremesa);
-    precoSobremesa = valor(sobremesa);
+    nomeSobremesa = sobremesa.querySelector('.nome').textContent;
+    precoSobremesa = sobremesa.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
 
     habilitarBotao();
 }
@@ -59,30 +61,19 @@ function habilitarBotao () {
 }
 }
 
-function nome (nomeSelecionado) {
-    const nomePedido = nomeSelecionado.querySelector('.nome').textContent;
-    return nomePedido;
-}
-
-function valor (preco) {
-    let valorPedido = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
-    valorPedido = (Number(valorPedido));
-    return valorPedido;
-}
-
 function fecharPedido () {
     const modal = document.querySelector('.background');
     modal.classList.remove('display');
 
-    valorTotal = (precoPrato + precoBebida + precoSobremesa);
+    valorTotal = Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa);
 
     document.querySelector('.nome-prato').textContent = nomePrato;
-    document.querySelector('.preco-prato').textContent = precoPrato.toFixed(2);
+    document.querySelector('.preco-prato').textContent = precoPrato;
     document.querySelector('.nome-bebida').textContent = nomeBebida;
-    document.querySelector('.preco-bebida').textContent = precoBebida.toFixed(2);
+    document.querySelector('.preco-bebida').textContent = precoBebida;
     document.querySelector('.nome-sobremesa').textContent = nomeSobremesa;
-    document.querySelector('.preco-sobremesa').textContent = precoSobremesa.toFixed(2);
-    document.querySelector('.preco-total').textContent = valorTotal.toFixed(2);
+    document.querySelector('.preco-sobremesa').textContent = precoSobremesa;
+    document.querySelector('.preco-total').textContent = valorTotal.toFixed(numToFixed);
 }
 
 function cancelar () {
@@ -94,14 +85,7 @@ function enviarPedido () {
     const nomePessoa = prompt(`Qual seu nome?`);
     const endereco = prompt (`Qual seu endereço?`);
 
-const mensagem = `Olá, gostaria de fazer o pedido: 
-- Prato: ${nomePrato} 
-- Bebida: ${nomeBebida} 
-- Sobremesa: ${nomeSobremesa} 
-Total: R$${valorTotal.toFixed(2)} 
-
-Nome: ${nomePessoa} 
-Endereço: ${endereco}`;
+    const mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomePrato} \n- Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} \nTotal: R$${valorTotal.toFixed(numToFixed)} \n\nNome: ${nomePessoa} \nEndereço: ${endereco}`;
 
     const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
 
