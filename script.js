@@ -7,13 +7,13 @@ let precoSobremesa;
 let valorTotal;
 
 function selecionarPrato(prato) {
-    const pratoSelecionado = document.querySelector(`.prato .selecionado`);
+const pratoSelecionado = document.querySelector(`.prato .selecionado`);
 
-    if (pratoSelecionado !== null) {
-        pratoSelecionado.classList.remove("selecionado");
-    }
+if (pratoSelecionado !== null) {
+    pratoSelecionado.classList.remove("selecionado");
+}
 
-    prato.classList.add("selecionado");
+prato.classList.add("selecionado");
 
     nomePrato = nome(prato);
     precoPrato = valor(prato);
