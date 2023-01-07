@@ -241,14 +241,14 @@
                 </li>
             </ul>
             <div class="botoes">
-                <button class="confirmar">Tudo certo, pode pedir!</button>
-                <button class="cancelar">Cancelar</button>
+                <button onclick="enviarPedido()" class="confirmar">Tudo certo, pode pedir!</button>
+                <button onclick="cancelar(this)" class="cancelar">Cancelar</button>
             </div>
         </div>
     </div>
     <footer>
         <div class="fechar-pedido">
-            <button class ="enviar" disabled onclick="fecharPedido()"><p>Selecione os 3 itens para fechar o pedido</p></button>
+            <button class ="enviar" disabled onclick="fecharPedido(this)"><p>Selecione os 3 itens para fechar o pedido</p></button>
         </div>
     </footer>
     

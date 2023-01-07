@@ -32,7 +32,7 @@ h1, h3 {
 
 h1 {
     font-size:44px;
-    weight:400;
+    font-weight:400;
     line-height:44px;
 }
 
@@ -227,6 +227,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     margin-top:5px;
+    height:193px;
 }
 
 ul .item {
