@@ -66,7 +66,7 @@ function nome (nomeSelecionado) {
 
 function valor (preco) {
     let valorPedido = preco.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
-    valorPedido = (Number((valorPedido)*100)/100);
+    valorPedido = (Number(valorPedido));
     return valorPedido;
 }
 
