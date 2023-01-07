@@ -9,13 +9,13 @@ let valorTotal;
 const numToFixed = 2;
 
 function selecionarPrato(prato) {
-const pratoSelecionado = document.querySelector(`.prato .selecionado`);
+    const pratoSelecionado = document.querySelector(`.prato .selecionado`);
 
-if (pratoSelecionado !== null) {
+    if (pratoSelecionado !== null) {
     pratoSelecionado.classList.remove("selecionado");
-}
+    }
 
-prato.classList.add("selecionado");
+    prato.classList.add("selecionado");
 
     nomePrato = prato.querySelector('.nome').textContent;
     precoPrato = prato.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
@@ -39,7 +39,7 @@ function selecionarBebida(bebida) {
     }
 
 function selecionarSobremesa(sobremesa) {
-const sobremesaSelecionada = document.querySelector(".sobremesa .selecionado");
+    const sobremesaSelecionada = document.querySelector(".sobremesa .selecionado");
 
     if (sobremesaSelecionada !== null) {
         sobremesaSelecionada.classList.remove("selecionado");
@@ -58,7 +58,7 @@ function habilitarBotao () {
     const botao = document.querySelector('.enviar');
     botao.removeAttribute('disabled');
     botao.textContent = `Fechar pedido`;
-}
+    }
 }
 
 function fecharPedido () {
