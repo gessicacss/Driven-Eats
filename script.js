@@ -74,7 +74,7 @@ function fecharPedido () {
     document.querySelector('.preco-bebida').textContent = precoBebida;
     document.querySelector('.nome-sobremesa').textContent = nomeSobremesa;
     document.querySelector('.preco-sobremesa').textContent = precoSobremesa;
-    document.querySelector('.preco-total').textContent = valorTotal.toFixed(numToFixed);
+    document.querySelector('.preco-total').textContent = `R$ ${valorTotal.toFixed(numToFixed)}`;
 }
 
 function cancelar () {
