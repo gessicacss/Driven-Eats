@@ -9,89 +9,108 @@ let valorTotal;
 const numToFixed = 2;
 
 function selecionarPrato(prato) {
-    const pratoSelecionado = document.querySelector('.prato .selecionado');
+  const pratoSelecionado = document.querySelector(".prato .selecionado");
 
-    if (pratoSelecionado !== null) {
+  if (pratoSelecionado !== null) {
     pratoSelecionado.classList.remove("selecionado");
-    }
+  }
 
-    prato.classList.add("selecionado");
+  prato.classList.add("selecionado");
 
-    nomePrato = prato.querySelector('.nome').textContent;
-    precoPrato = prato.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
+  nomePrato = prato.querySelector(".nome").textContent;
+  precoPrato = prato
+    .querySelector(".valor")
+    .textContent.replace("R$", "")
+    .replace(",", ".");
 
-    habilitarBotao();
-    }
+  habilitarBotao();
+}
 
 function selecionarBebida(bebida) {
-    const bebidaSelecionada = document.querySelector(".bebida .selecionado");
+  const bebidaSelecionada = document.querySelector(".bebida .selecionado");
 
-    if (bebidaSelecionada !== null) {
-        bebidaSelecionada.classList.remove("selecionado");
-    }
+  if (bebidaSelecionada !== null) {
+    bebidaSelecionada.classList.remove("selecionado");
+  }
 
-    bebida.classList.add("selecionado");
+  bebida.classList.add("selecionado");
 
-    nomeBebida = bebida.querySelector('.nome').textContent;
-    precoBebida = bebida.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
+  nomeBebida = bebida.querySelector(".nome").textContent;
+  precoBebida = bebida
+    .querySelector(".valor")
+    .textContent.replace("R$", "")
+    .replace(",", ".");
 
-    habilitarBotao();
-    }
+  habilitarBotao();
+}
 
 function selecionarSobremesa(sobremesa) {
-    const sobremesaSelecionada = document.querySelector(".sobremesa .selecionado");
+  const sobremesaSelecionada = document.querySelector(
+    ".sobremesa .selecionado"
+  );
 
-    if (sobremesaSelecionada !== null) {
-        sobremesaSelecionada.classList.remove("selecionado");
+  if (sobremesaSelecionada !== null) {
+    sobremesaSelecionada.classList.remove("selecionado");
+  }
+
+  sobremesa.classList.add("selecionado");
+
+  nomeSobremesa = sobremesa.querySelector(".nome").textContent;
+  precoSobremesa = sobremesa
+    .querySelector(".valor")
+    .textContent.replace("R$", "")
+    .replace(",", ".");
+
+  habilitarBotao();
 }
 
-    sobremesa.classList.add("selecionado");
-
-    nomeSobremesa = sobremesa.querySelector('.nome').textContent;
-    precoSobremesa = sobremesa.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
-
-    habilitarBotao();
-}
-
-function habilitarBotao () {
-    if (nomePrato !== undefined && nomeBebida !== undefined && nomeSobremesa !== undefined) {
-    const botao = document.querySelector('.enviar');
-    botao.removeAttribute('disabled');
+function habilitarBotao() {
+  if (
+    nomePrato !== undefined &&
+    nomeBebida !== undefined &&
+    nomeSobremesa !== undefined
+  ) {
+    const botao = document.querySelector(".enviar");
+    botao.removeAttribute("disabled");
     botao.textContent = `Fechar pedido`;
-    }
+  }
 }
 
-function fecharPedido () {
-    const modal = document.querySelector('.background');
-    modal.classList.remove('display');
+function fecharPedido() {
+  const modal = document.querySelector(".background");
+  modal.classList.remove("display");
 
+  valorTotal =
+    Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa);
 
-    valorTotal = Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa);
-
-    document.querySelector('.nome-prato').textContent = nomePrato;
-    document.querySelector('.preco-prato').textContent = precoPrato;
-    document.querySelector('.nome-bebida').textContent = nomeBebida;
-    document.querySelector('.preco-bebida').textContent = precoBebida;
-    document.querySelector('.nome-sobremesa').textContent = nomeSobremesa;
-    document.querySelector('.preco-sobremesa').textContent = precoSobremesa;
-    document.querySelector('.preco-total').textContent = `R$ ${valorTotal.toFixed(numToFixed)}`;
+  document.querySelector(".nome-prato").textContent = nomePrato;
+  document.querySelector(".preco-prato").textContent = precoPrato;
+  document.querySelector(".nome-bebida").textContent = nomeBebida;
+  document.querySelector(".preco-bebida").textContent = precoBebida;
+  document.querySelector(".nome-sobremesa").textContent = nomeSobremesa;
+  document.querySelector(".preco-sobremesa").textContent = precoSobremesa;
+  document.querySelector(".preco-total").textContent = `R$ ${valorTotal.toFixed(
+    numToFixed
+  )}`;
 }
 
-function cancelar () {
-    const fecharModal = document.querySelector('.background');
-    fecharModal.classList.add('display');
+function cancelar() {
+  const fecharModal = document.querySelector(".background");
+  fecharModal.classList.add("display");
 }
 
-function enviarPedido () {
-    const nomePessoa = prompt(`Qual seu nome?`);
-    const endereco = prompt (`Qual seu endereço?`);
+function enviarPedido() {
+  const nomePessoa = prompt(`Qual seu nome?`);
+  const endereco = prompt(`Qual seu endereço?`);
 
-    const mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomePrato} 
+  const mensagem = `Olá, gostaria de fazer o pedido: \n - Prato: ${nomePrato} 
     - Bebida: ${nomeBebida} \n- Sobremesa: ${nomeSobremesa} 
     Total: R$ ${valorTotal.toFixed(numToFixed)} \n\nNome: ${nomePessoa} 
     Endereço: ${endereco}`;
 
-    const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
+  const enviarWpp = `https://wa.me/5521999999999?text=${encodeURIComponent(
+    mensagem
+  )}`;
 
-    window.open(enviarWpp);
+  window.open(enviarWpp);
 }
