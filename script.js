@@ -9,7 +9,7 @@ let valorTotal;
 const numToFixed = 2;
 
 function selecionarPrato(prato) {
-    const pratoSelecionado = document.querySelector(`.prato .selecionado`);
+    const pratoSelecionado = document.querySelector('.prato .selecionado');
 
     if (pratoSelecionado !== null) {
     pratoSelecionado.classList.remove("selecionado");
@@ -17,7 +17,7 @@ function selecionarPrato(prato) {
 
     prato.classList.add("selecionado");
 
-    nomePrato = prato.querySelector('.nome').textContent;
+    nomePrato = prato.querySelector('.nome').innerHTML;
     precoPrato = prato.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
 
     habilitarBotao();
