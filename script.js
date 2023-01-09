@@ -17,7 +17,7 @@ function selecionarPrato(prato) {
 
     prato.classList.add("selecionado");
 
-    nomePrato = prato.querySelector('.nome').innerHTML;
+    nomePrato = prato.querySelector('.nome').textContent;
     precoPrato = prato.querySelector('.valor').textContent.replace("R$", "").replace(",", ".");
 
     habilitarBotao();
